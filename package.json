@@ -1,0 +1,120 @@
+{
+  "name": "flex-editor-pro",
+  "version": "0.0.1",
+  "description": "Flex Editor is a powerful React WYSIWYG text editor with rich-text features and full customization.",
+  "license": "MIT",
+  "homepage": "https://www.npmjs.com/package/flex-editor-pro",
+  "author": "Divya <dj2000sep@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/divyaj1309/flex-editor-pro/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/divyaj1309/flex-editor-pro.git"
+  },
+  "keywords": [
+    "react",
+    "editor",
+    "rich-text",
+    "text-editor",
+    "wysiwyg",
+    "content-editing",
+    "flex-editor-pro",
+    "wysiwyg-editor",
+    "react-rich-text",
+    "rich-text-react-editor",
+    "react-table-editor",
+    "modern-editor",
+    "react-text-editor-ui",
+    "modern-text-editor",
+    "rich-text-editor-react",
+    "react-wysiwyg",
+    "react-rich-text-editor",
+    "react-text-editor",
+    "react-editor",
+    "react-component",
+    "customizable-editor",
+    "open-source-editor",
+    "html-editor",
+    "rich-text-wysiwyg",
+    "web-editor",
+    "javascript",
+    "content-editor",
+    "react-component-library",
+    "text-formatting",
+    "markdown-editor",
+    "content-management",
+    "ui-library",
+    "frontend",
+    "web-development",
+    "code-editor",
+    "real-time-editor",
+    "drag-and-drop",
+    "plugins",
+    "themes",
+    "responsive-design",
+    "cross-platform",
+    "developer-tools"
+  ],
+  "main": "dist/index.js",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "babel src --out-dir dist --copy-files",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@craco/craco": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "emoji-mart": "^5.5.2",
+    "flex-editor-pro": "^0.0.1",
+    "html-docx-js": "^0.3.1",
+    "mammoth": "^1.6.0",
+    "react-icons": "^5.4.0",
+    "react-scripts": "5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0 <20.0.0",
+    "react-dom": ">=16.8.0 <20.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.26.4",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,355 @@
+/* Overall Text Editor Container */
+.text-editor {
+  position: relative; 
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f4f4f9;
+}
+
+/* Toolbar Styles */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  padding: 6px 0;
+  border-radius: 8px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.toolbar button,
+.toolbar select,
+.toolbar label {
+  margin: 4px;
+  padding: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s ease;
+}
+
+.toolbar button:hover,
+.toolbar select:hover,
+.toolbar label:hover {
+  background-color: #e0e0e0;
+}
+
+/* Styling the Icons */
+.toolbar button svg {
+  width: 16px;
+  height: 16px;
+  color: #333;
+}
+
+.toolbar input[type="color"] {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+/* Select Box Styles for Font Style and Font Size */
+.toolbar select {
+  font-size: 12px;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.toolbar select:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+/* Editing Area */
+.editing-area {
+  min-height: 300px;
+  background-color: #ffffff;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-y: auto;
+}
+
+.editing-area[contenteditable="true"]:empty:before {
+  content: "Start typing...";
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Style for Placeholder Text */
+.editing-area::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+/* Font Size Styles */
+font[size="1"] {
+  font-size: 10px;
+}
+font[size="2"] {
+  font-size: 12px;
+}
+font[size="3"] {
+  font-size: 16px;
+}
+font[size="4"] {
+  font-size: 18px;
+}
+font[size="5"] {
+  font-size: 24px;
+}
+font[size="6"] {
+  font-size: 32px;
+}
+font[size="7"] {
+  font-size: 48px;
+}
+
+a[name] {
+  color: blue;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Modal Overlay */
+.table-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.editing-area[contenteditable="true"]:empty::before {
+  content: attr(placeholder);
+  color: #aaa;
+  pointer-events: none;
+}
+
+/* Modal Content */
+.table-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 400px;
+}
+
+/* Grid for Table Size Selection */
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 30px);
+  gap: 4px;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+.table-cell {
+  width: 30px;
+  height: 30px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.table-cell:hover {
+  background-color: #d0d0d0;
+  transform: scale(1.1);
+}
+
+/* Highlighting selected cells */
+.table-cell.selected {
+  background-color: #0078d4;
+  color: white;
+}
+
+.table-cell.highlighted {
+  background: #69a6e7;
+}
+
+/* Cancel Button */
+.table-modal-content button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #0078d4;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.table-modal-content button:hover {
+  background-color: #005bb5;
+}
+
+
+.text-editor.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  z-index: 1000;
+  background: #fff;
+  padding: 20px; /* Adjust padding to fit fullscreen */
+  font-size: 16px; /* Optional: increase font size for fullscreen */
+  overflow: auto; /* Allow content to scroll if needed */
+  box-sizing: border-box; /* Ensure padding is included in width/height calculation */
+}
+
+.text-editor.fullscreen .editing-area {
+  height: calc(100% - 40px); /* Adjust to avoid covering the toolbar */
+}
+
+
+.custom-table {
+  border: 1px solid #ddd;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  overflow: hidden; /* Prevent delete icons from spilling outside */
+  position: relative;
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #0a0909;
+  padding: 10px;
+  text-align: left;
+  position: relative; /* For delete icons */
+}
+
+.custom-table th {
+  background-color: #f9f9f9;
+}
+
+.custom-table .delete-icon {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 5px; /* Adjust position to stay inside the cell */
+  transform: translate(0, -10%);
+  background-color: #ff6666;
+  color: white;
+  font-size: 12px;
+  width: 16px;
+  height: 16px;
+  line-height: 15px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.custom-table .delete-icon.delete-row {
+  top: 5px; /* Adjust top for rows */
+  right: 5px; /* Stay inside the last cell */
+}
+
+.custom-table .delete-icon.delete-column {
+  top: 5px; /* Stay at the top of the first row */
+  right: 5px; /* Adjust position inside the header cell */
+}
+
+.custom-table td:hover .delete-icon,
+.custom-table th:hover .delete-icon {
+  display: block; /* Show icons only on hover */
+}
+.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode .toolbar {
+  background-color: #333;
+}
+
+.dark-mode .toolbar button,
+.dark-mode .toolbar select,
+.dark-mode .toolbar label {
+  background-color: #444;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+.dark-mode .toolbar input[type="color"] {
+  background-color: #444;
+  border: 1px solid #666;
+}
+
+.dark-mode .editing-area {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+
+
+/* Word Count Display - Fixed at bottom */
+.word-count-display {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: right;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.dark-mode .word-count-display {
+  background-color: #333;
+  color: #fff;
+  border-color: #555;
+}
+
+/* Spell Check Suggestions Popup */
+.spell-suggestions {
+  font-family: Arial, sans-serif;
+}
+
+.spell-suggestions div {
+  transition: background-color 0.2s ease;
+}
+

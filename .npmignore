@@ -1,0 +1,10 @@
+src/
+public/
+node_modules/
+*.log
+*.test.js
+*.test.ts
+*.test.tsx
+.gitignore
+craco.config.js
+*.tgz
