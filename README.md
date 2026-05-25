@@ -88,3 +88,6 @@ npm install flex-editor-pro
 ## 📩 Contact & Support
 For any questions, feedback, or business inquiries, reach out to me at:
 📧 Email: dj2000sep@gmail.com
+=======
+# flex-editor
+Flex Editor is a powerful React WYSIWYG text editor with rich-text features and full customization.
